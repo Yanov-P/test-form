@@ -12,7 +12,6 @@ const viewModel = reactive({
 })
 
 export default function create(storage: IFormStorage) {
-    console.log(storage)
     init(storage.form) 
     return { 
         ...toRefs(viewModel),
@@ -22,23 +21,19 @@ export default function create(storage: IFormStorage) {
 }
 
 async function init(form: MyForm | null = null) {
-    console.log(form)
+
     if(form){
         viewModel.form = form
     }
-    
     else{
         viewModel.form = new MyForm()
     }
+
     viewModel.ratings = await new RatingsWebRepository().fetch()
 }
 
 function validate(){
     return Validator.validate(viewModel.form)
-}
-
-function setForm(){
-
 }
 
 function clear(){

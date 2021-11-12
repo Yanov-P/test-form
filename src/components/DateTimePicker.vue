@@ -97,7 +97,6 @@ export default class DateTimePicker extends Vue {
     onInput(){
         let allDates = [...this.dates]
         allDates.unshift(this.defaultDate)
-        console.log(allDates)
         this.$emit('datesChanged', allDates)
     }
 

@@ -43,7 +43,7 @@ export class Validator{
             }
         }
         catch{
-            errors.push("Дата указана некорректно")
+            errors.push("Время указано некорректно")
         }
         return errors
 

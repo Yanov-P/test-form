@@ -7,7 +7,7 @@ export class RatingsWebRepository implements IRatingsRepository{
         return axios.get('http://testwork.rdbx24.ru/api/')
         .then(response => {
 
-            return response.data?.result.map(function(item: any){
+            return response.data?.result.map( function(item: any){
                 return new MyRating(item.title, item.id)
             })
             
